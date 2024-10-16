@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/dsfr.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesEduConnect.css">
+    <link rel="stylesheet" href="css/stylesLogosEduConnect.css">
+    <link rel="stylesheet" href="css/messages.css">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/idp-static/favicons/manifest.webmanifest" crossorigin="use-credentials">
+    <title>Sélection du profil - ÉduConnect</title>
+  <script src="js/jquery.min.js"></script><script src="js/cookie.js"></script></head>
+  
+  
+  <body class="scrolled fr-header-padding-top" id="body">
+    <div class="fr-skiplinks">
+      <nav class="fr-container" role="navigation" aria-label="Accès rapide">
+        <ul class="fr-skiplinks__list">
+          <li>
+            <a class="fr-link" href="#contenu">Contenu</a>
+          </li>
+          <li>
+            <a class="fr-link" href="#footer">Pied de page</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+	<!-- header de la page de sélection de profil -->
+    <header role="banner" class="fr-header js-header fixed no-shadow" id="header_profil">
+      <div class="fr-header__body">
+        <div class="fr-container">
+          <div class="fr-header__body-row">
+            <div class="fr-header__brand fr-enlarge-link">
+              <div class="fr-header__brand-top">
+                <div class="fr-header__logo d-flex-column align-left">
+                  <img id="logo-marianne" src="images/logo.png" alt="© Ministère de l’Éducation nationale et de la Jeunesse" class="logo-marianne logo-hidden" aria-hidden="true">
+                  <img id="logo-ministere-top" src="images/logo-ministere.png" alt="© Ministère de l’Éducation nationale et de la Jeunesse" class="fr-logo logo-ministere-small">
+                </div>
+              </div>
+              <div class="fr-header__service">
+                <p id="titreEduConnect" class="fr-header__service-title">ÉduConnect</p>
+                <p class="fr-header__service-tagline">Un compte unique pour les services numériques des écoles et des établissements</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+	<!-- header de la page de sélection de connexion -->
+	<header role="banner" class="fr-header js-header fixed no-shadow minify hidden-item" id="header_connexion">
+      <div class="fr-header__body">
+        <div class="fr-container">
+          <div class="fr-header__body-row">
+            <div class="fr-header__brand fr-enlarge-link">
+              <div class="fr-header__brand-top wauto-md">
+                <div class="fr-header__logo d-flex-column align-left">
+                  <img id="logo-marianne-choix" src="images/logo.png" class="logo-marianne" alt="© Ministère de l’Éducation nationale et de la Jeunesse">
+                </div>
+                <div class="fr-header__navbar">
+                  <button id="btn_menu" class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-822" aria-haspopup="menu" aria-label="Ouvrir le menu">Ouvrir le menu</button>
+                </div>
+              </div>
+              <div class="fr-header__service wauto-md no-shadow">
+                <p id="titreEduConnectProfilSelected" class="fr-header__service-title">ÉduConnect</p>
+              </div>
+            </div>
+            <div class="fr-header__tools">
+              <div class="fr-header__tools-links">
+                <ul class="fr-links-group">
+                  <li>
+                    <button class="fr-link fr-fi-arrow-left-line fr-link--icon-left" id="bouton_profil" onclick="selectionProfil('choix')">Changer de profil</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fr-header__menu fr-modal" id="modal-822">
+        <div class="fr-container">
+          <button class="fr-link--close fr-link" aria-controls="modal-822" aria-label="Fermer le menu">Fermer le menu</button>
+          <div class="fr-header__menu-links"></div>
+        </div>
+      </div>
+    </header><div id="indispo" role="main" class="fr-container height-auto hidden-item">
+    <div class="fr-grid-row">
+        <div class="fr-col-md-8 fr-col-12 m-auto">
+            <div class="fr-grid-row fr-grid-row--gutters">
+                <div class="fr-col-12" id="message">
+                    <div id="titreIndispo">
+                        <h1 class="fr-mb-2w"></h1>
+                    </div>
+                    <div class="fr-callout">
+                        <div>
+                            <span id="texteIndispo"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="contenu" role="main" class="fr-container height-auto">
+    <!-- emplacement des messages d'indisponibilité, de mode dégradé et d'information -->
+    <div class="fr-grid-row fr-grid-row--gutters flex-row-reverse flex-row-sm">
+    <div class="fr-col-md-4 fr-col-12 flex-column-md hidden-lg sidebar-container">
+        <div class="sidebar">
+        <div class="fr-pb-3w d-flex-column notification hidden-item" id="sidebar_eleve_small">
+            <p class="title-fs-18 fr-mb-1v">Le compte ÉduConnect peut donner accès&nbsp;:</p>
+            <ul>
+            <li>à l’espace numérique de travail (ENT) &nbsp;;</li>
+            <li>au livret scolaire.</li>
+            </ul>
+        </div>
+        <div class="fr-pb-3w d-flex-column notification" id="sidebar_responsable_small">
+            <p class="title-fs-18 fr-mb-1v">Le compte ÉduConnect peut donner accès&nbsp;:</p>
+            <ul>
+            <li>aux démarches en ligne, comme la fiche de renseignements, la demande de bourse, etc&nbsp;;</li>
+            <li>à l’espace numérique de travail (ENT) &nbsp;;</li>
+            <li>au livret scolaire.</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <div class="fr-col-md-8 fr-col-12">
+        <!-- affichage de la sélection de profil -->
+        <div class="choixProfil" id="div_profil">
+        <h1 class="fs-20 fr-mb-3w">Je sélectionne mon profil</h1>
+        <div class="choixProfil__row">
+            <div class="choixProfil__btn">
+            <div class="choixProfil__icone">
+                <img src="images/icone-rp-grande.svg" alt="Icône Responsable d'élève" aria-hidden="true">
+            </div>
+            <button onclick="selectionProfil('responsable')" id="bouton_responsable" class="fr-btn" aria-label="Se connecter avec un profil Responsable d'élève">Responsable d'élève
+            </button></div>
+            <div class="choixProfil__btn">
+            <div class="choixProfil__icone">
+                <img src="images/icone-eleve-grande.svg" alt="Icône Élève" aria-hidden="true">
+            </div>
+            <button onclick="selectionProfil('eleve')" id="bouton_eleve" class="fr-btn" aria-label="Se connecter avec un profil Élève">Élève
+            </button></div>
+        </div>
+        </div>
+        <!-- fin affichage de la sélection de profil -->
+
+        <!-- affichage du formulaire de connexion -->
+        <div class="profil fr-pt-0 fr-pb-2w hidden-item" id="div_connexion">
+        <div class="titreCompte fr-mb-2w" id="titre_responsable">
+            <div class="titreCompte__icone titreCompte__icone--rp">
+            <img src="images/icone-rp.svg" alt="Icône Responsable d'élève" aria-hidden="true">
+            </div>
+            Responsable d'élève
+        </div>
+        <div class="titreCompte fr-mb-2w" id="titre_eleve">
+            <div class="titreCompte__icone titreCompte__icone--eleve">
+            <img src="images/icone-eleve.svg" alt="Icône Élève" aria-hidden="true">
+            </div>
+            Élève
+        </div>
+
+        <div class="fr-card fr-card--no-arrow">
+            <div class="fr-card__body">
+            <h1 id="titreLogin" class="fs-20 fr-mb-5w">Je me connecte avec mon compte ÉduConnect</h1>
+            <form id="validerAuth" action="/idp/profile/SAML2/Redirect/SSO?execution=e1s1" method="post" onsubmit="return checkLoginMdp()">
+                <div class="fr-input-group">
+                <div class="d-flex">
+                    <label id="labelle_identifiant" class="fr-label" for="username">Identifiant</label>
+                    <a class=" fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href="#" hrefcible="https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliLogin/recupererLoginResponsable" id="identifiant_perdu_responsable" titremodale="Identifiant oublié indisponible" corpsmodale="<b> Avertissement : </b> &nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Identifiant oublié ?</a>
+                    <a class=" fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href="#" hrefcible="https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliLogin/recupererLoginEleve" id="identifiant_perdu_eleve" titremodale="Identifiant oublié indisponible" corpsmodale="<b> Avertissement : </b> &nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Identifiant oublié ?</a>
+                </div>
+                <input class="fr-input" type="text" id="username" name="j_username" placeholder="Identifiant au format p.nomXX">
+                <p hidden="true" id="erreurIdentifiant">Votre identifiant ou votre mot de passe est incorrect. Veuillez vérifier les informations de votre compte ÉduConnect.</p>
+                <p hidden="" id="erreurIdentifiantVide">Vous devez saisir votre identifiant.</p>
+                </div>
+                <div class="fr-input-group fr-mb-2w">
+                <div class="d-flex">
+                    <label id="labelle_mdp" class="fr-label" for="password">Mot de passe</label>
+                    <a class=" fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href="#" hrefcible="https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliMdp/recupererMotDePasseResponsable" id="password_perdu_responsable" titremodale="Mot de passe oublié indisponible" corpsmodale="<b> Avertissement : </b> &nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Mot de passe oublié ?</a>
+                    <a class=" fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href="#" hrefcible="https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliMdp/recupererMotDePasseEleve" id="password_perdu_eleve" titremodale="Mot de passe oublié indisponible" corpsmodale="<b> Avertissement : </b> &nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Mot de passe oublié ?</a>
+                </div>
+                <div class="position-relative">
+                    <input class="fr-input" type="password" id="password" name="j_password">
+                    <button type="button" class="showPwd" aria-label="Afficher le mot de passe" data-input="password">
+                        <span id="oeil_mdp" class="fr-fi-eye-line" aria-hidden="true"></span>
+                    </button>
+                    <p hidden="true" id="erreurMdp">Votre identifiant ou votre mot de passe est incorrect. Veuillez vérifier les informations de votre compte ÉduConnect.</p>
+                    <p hidden="" id="erreurMdpVide">Vous devez saisir votre mot de passe.</p>
+                </div>
+                </div>
+                <div class="text-center">
+                <button id="bouton_valider" type="submit" class="fr-btn fr-mb-1w" name="_eventId_proceed">Se connecter</button>
+                </div>
+            </form>
+            <div class="text-center" id="div_pas_compte">
+                <form action="/idp/profile/SAML2/Redirect/SSO?execution=e1s1" method="post" onsubmit="checkModeLecture(this); ; return flag_clic === 1;" titremodale="Je n'ai pas de compte indisponible" corpsmodale="<b> Avertissement : </b> &nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">
+                    <button class="fr-link small fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" type="submit" name="_eventId_SignUp" id="pas_de_compte">Je n'ai pas de compte</button>
+                </form>
+            </div>
+            </div>
+        </div>
+
+            <div id="div_franceconnect">
+                <div id="divider_ou" class="divider">ou</div>
+                <div class="fr-card fr-card--no-arrow">
+                <div class="fr-card__body">
+                    <h2 id="titre_FC">Je me connecte avec FranceConnect</h2>
+                    <div class="text-center fr-mb-1v">
+                    <form action="/idp/profile/SAML2/Redirect/SSO?execution=e1s1" method="post" titremodale="Activation par FranceConnect indisponible" corpsmodale="<b> Avertissement : </b> &nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">
+                        <button aria-label="S'identifier avec FranceConnect" id="connexionFC" class="bouton-france-connect" type="submit" name="_eventId_FranceConnect">
+                        <img src="images/logo-fc.svg" alt="S'identifier avec FranceConnect">
+                        </button>
+                    </form>
+                    </div>
+                    <div class="text-center fr-mb-1w">
+                    <a id="lien_FC" href="https://app.franceconnect.gouv.fr/en-savoir-plus" class="reverse-hover-link fs-13 bf500" target="_blank" rel="noopener" aria-label="Qu'est-ce que FranceConnect ? - nouvelle fenêtre">Qu'est-ce que FranceConnect ?</a>
+                    </div>
+                    <small id="desc_FC" class="g600">FranceConnect vous permet d’accéder  &nbsp; de nombreux services de l’État en utilisant un compte dont vous disposez déj &nbsp;. Utilisez-le pour ÉduConnect !</small>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin affichage du formulaire de connexion -->
+    </div>
+
+    <div id="sidebar_maintenance" class="fr-col-md-4 fr-col-12 flex-column-md">
+        <div class="sidebar" id="sidebar_parent">
+        <div class="fr-pb-3w fr-displayed-md notification">
+            <div id="sidebar_eleve" class="hidden-item">
+            <p class="title-fs-18 fr-mb-1v">Le compte ÉduConnect peut donner accès&nbsp;:</p>
+            <ul>
+                <li>à l’espace numérique de travail (ENT) &nbsp;;</li>
+                <li>au livret scolaire.</li>
+            </ul>
+            </div>
+            <div id="sidebar_responsable">
+            <p class="title-fs-18 fr-mb-1v">Le compte ÉduConnect peut donner accès&nbsp;:</p>
+            <ul>
+                <li>aux démarches en ligne, comme la fiche de renseignements, la demande de bourse, etc&nbsp;;</li>
+                <li>à l’espace numérique de travail (ENT) &nbsp;;</li>
+                <li>au livret scolaire.</li>
+            </ul>
+            </div>
+        </div>
+        <!-- emplacement des messages d'avertissement -->
+        </div>
+    </div>
+    </div>
+</div>
+
+<dialog id="modalMaintenance" class="fr-modal modalRP role=" alertdialog"="" aria-labelledby="modalMaintenance-title">
+<div class="fr-container fr-container-md">
+        <div class="fr-grid-row fr-grid-row--center">
+        <div class="fr-col-12 fr-col-md-7">
+            <div class="fr-modal__body">
+            <div class="fr-modal__content">
+                <h1 id="modalMaintenance-title" class="fr-mb-3w">Indisponible</h1>
+                <p class="fr-mb-5w" id="texteMaintenance"></p>
+                <div style="text-align:center">
+                    <button class="fr-btn  btn-modal" onclick="hideModal('modalMaintenance')" aria-label="Retour">Retour</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</dialog>
+
+
+<footer class="fr-footer" role="contentinfo" id="footer">
+  <div class="fr-container">
+    <div class="fr-footer__body baseline">
+      <div>
+        <div class="fr-footer__brand fr-enlarge-link">
+            <img id="logo-ministere" src="images/logo-ministere.png" alt="© Ministère de l’Éducation nationale et de la Jeunesse" class="fr-logo logo-ministere-large">
+        </div>
+        <div>
+            <img src="images/relance-fr-ue.svg" class="img-france-relance" alt="France Relance, financé par l'Union Européenne (Next Generation EU)">
+        </div>
+      </div>
+      <div class="fr-footer__content fr-mt-5v">
+        <p class="fr-footer__content-desc" id="descriptionApplication">Un compte unique pour les services numériques des écoles et des établissements</p>
+        <ul class="fr-footer__content-list">
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" id="lienEducationGouv" href="https://education.gouv.fr" aria-label="education.gouv.fr - nouvelle fenêtre" target="_blank">education.gouv.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" id="lienServicePublic" href="https://service-public.fr" aria-label="service-public.fr - nouvelle fenêtre" target="_blank">service-public.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" id="lienLegifrance" href="https://legifrance.gouv.fr" aria-label="legifrance.gouv.fr - nouvelle fenêtre" target="_blank">legifrance.gouv.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" id="lienFranceconnect" href="https://franceconnect.gouv.fr" aria-label="franceconnect.gouv.fr - nouvelle fenêtre" target="_blank">franceconnect.gouv.fr</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-footer__bottom">
+      <ul class="fr-footer__bottom-list">
+         <li class="fr-footer__bottom-item">
+           <a id="lienAide" class="fr-footer__bottom-link" href="/educt-aide/aide" target="_blank" aria-label="Besoin d’aide - nouvelle fenêtre">Besoin d’aide ?</a>
+         </li>
+         <li class="fr-footer__bottom-item">
+           <a id="lienAccessibilite" class="fr-footer__bottom-link" href="https://conformite.education.fr/?appli=EDUCONNECT" target="_blank" aria-label="Accessibilité - nouvelle fenêtre">Accessibilité &nbsp;: non conforme</a>
+         </li>
+         <li class="fr-footer__bottom-item">
+           <a id="lienMentions" class="fr-footer__bottom-link" href="/educt-aide/mentions" target="_blank" aria-label="Mentions légales - nouvelle fenêtre">Mentions légales</a>
+         </li>
+         <li class="fr-footer__bottom-item">
+           <a id="lienMentionsInformatives" class="fr-footer__bottom-link" href="https://educonnect.education.gouv.fr/educt-aide/informations" target="_blank" aria-label="Mentions informatives - nouvelle fenêtre">Mentions informatives</a>
+         </li>
+        <li class="fr-footer__bottom-item">
+	       <span id="version" class="fr-footer__bottom-link">24.4</span>
+	     </li>
+      </ul>
+      <div class="fr-footer__bottom-copy">
+        <p id="copyright"></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="js/affichageConnexion.js"></script>
+    <script>
+            document.getElementById('erreurMdp').setAttribute("hidden", true);
+            document.getElementById('erreurIdentifiant').setAttribute("hidden", true);
+    </script>
+    <script src="js/affichageMessages.js"></script>
+    <script src="js/affichageLoginMdp.js"></script>
+    <script src="js/affichageReadOnly.js"></script>
+    <script src="js/jquery-captcha.min.js"></script>
+<script type="module" src="js/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule="" src="js/dsfr.nomodule.min.js"></script>
+<script src="js/menujs.js"></script>
+<script src="js/affichageLogos.js"></script>
+<script>
+
+</script>
+  
+</body></html>

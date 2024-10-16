@@ -1,0 +1,62 @@
+/* display */
+.hidden-item {
+    display: none;
+}
+
+button.bouton-france-connect {
+    display: inline-block;
+    padding: 0;
+    box-shadow: none;
+}
+
+button.bouton-france-connect:hover {
+    box-shadow: none;
+}
+
+button.bouton-france-connect img {
+    display: block;
+    width: 155px;
+}
+
+
+input::-moz-placeholder {
+    font-style: normal !important;
+}
+
+input:-ms-input-placeholder {
+    font-style: normal !important;
+}
+
+input::placeholder {
+    font-style: normal !important;
+}
+
+.fr-fi-information-fill.fr-callout.bandeau {
+    padding: 1.25rem 1.5rem 1.5rem 3.125rem !important;
+}
+
+.btn-modal {
+    min-width: 45%;
+    width: auto;
+}
+
+.date {
+    margin-bottom: 8px;
+}
+
+@media (min-width: 48em) {
+    #sidebar_maintenance {
+        display: block !important;
+    }
+}
+
+.baseline {
+    align-items: start;
+}
+
+@media (max-width: 47.99em) {
+    .img-france-relance {
+        width: 75%;
+        max-width: 75%;
+    }
+}

@@ -1,0 +1,19 @@
+.logo-ministere-large {
+    width: 240px;
+}
+
+.logo-ministere-small {
+    width: 144px;
+}
+
+.logo-marianne {
+    width: 55px;
+}
+
+.logo-hidden {
+    display: none;
+}
+
+.scroll .js-header .logo-hidden {
+    display: block;
+}

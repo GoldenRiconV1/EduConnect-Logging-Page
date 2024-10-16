@@ -1,0 +1,111 @@
+.m-auto {
+    margin: auto;
+}
+
+/* override de la position du i pour le bandeau de maintenance */
+.fr-fi-information-fill.bandeau-maintenance:before {
+    position: initial;
+    margin: 0 0.5rem 0.5rem 0;
+    background: url("../images/avertissementI.svg") no-repeat;
+}
+
+.fr-fi-information-fill.fr-callout.bandeau-maintenance {
+    padding: 1.25rem 1.5rem 1.5rem 3.125rem !important;
+}
+
+.margin-top-minus-12 {
+    margin-top: -12px;
+}
+
+.toast-maintenance>.fr-callout__title {
+    color: var(--g800);
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.toast-maintenance>.fr-callout__text {
+    font-size: 0.75rem;
+}
+
+.toast-maintenance>.date-info {
+    font-size: 0.75rem;
+    margin-bottom: 7px;
+}
+
+/* Callout */
+.fr-callout {
+    padding: 1.5rem 3rem;
+    background-color: #e7e7e7;
+    --scheme-border: #ba4b01;
+}
+
+.fr-callout__title {
+    /* font-size: 0.875rem; */
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.fr-callout__text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.fr-callout__text+.fr-callout__text {
+    margin-top: 1.5rem;
+}
+
+.fr-callout.fr-fi-information-fill::before,
+.fr-callout.fr-fi-information-line::before {
+    margin: -0.5rem 0 0 0.5rem;
+    display: inline-block;
+    color: #ba4b01;
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+.fr-callout.secondary .fr-callout__title,
+.fr-callout.success .fr-callout__title,
+.texte-blanc {
+    color: white;
+}
+
+.fr-callout.secondary {
+    background-color: #0762c8;
+    /* background-color: #45459e; */
+    --scheme-border: #000091;
+    color: white;
+}
+
+.fr-callout.success {
+    background-color: #008941;
+    --scheme-border: #008941;
+    color: white;
+}
+
+.fr-callout.success hr {
+    border-top: 1px solid white;
+}
+
+.fr-callout.secondary::before {
+    content: none;
+}
+
+.fr-callout.secondary-no-border {
+    background-color: #0762c8;
+    /* background-color: #45459e; */
+    --scheme-border: none;
+    color: white;
+}
+
+.fr-callout.secondary-no-border::before {
+    color: white;
+}
+
+@media (max-width: 47.99em) {
+    .fr-fi-information-fill.fr-callout.bandeau,
+    .fr-fi-information-line.fr-callout.bandeau {
+        padding: 0.5rem 1.5rem 1rem 1.5rem !important;
+    }
+}
